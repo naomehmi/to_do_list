@@ -17,4 +17,4 @@ this is a revamped version of one of my front end web development assignments in
 
 ## extras
 
-- background picture by Tanny on pexels
+- background picture is called "Green Hills under a Blue Sky" by Tanny on pexels
