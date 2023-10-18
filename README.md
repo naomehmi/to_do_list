@@ -10,6 +10,9 @@ a simple and easy to-do list website to note down your tasks for the day. Add, u
 - edit/update tasks
 - delete tasks individually
 - delete every task instantly
+- responsive
+- pressing `enter` automatically inputs the task
+- the `add` button only works if the input value length is not empty
 
 ## brief description
 
@@ -23,7 +26,7 @@ this is a revamped version of one of my front end web development assignments in
 
 ## bugs/things to be fixed/added
 
-- making the UI more comfortable to the user, e.g. pressing  `enter` to immediately input the task as opposed to pressing a button.
+- animations
 
 ## extras
 
