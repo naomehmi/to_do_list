@@ -13,11 +13,17 @@ a simple and easy to-do list website to note down your tasks for the day. Add, u
 
 ## brief description
 
-this is a revamped version of one of my front end web development assignments in university. We were required to make a to-do list website with DOM HTML using JavaScript and create user interactions using `.addEventListener()`.
+this is a revamped version of one of my front end web development assignments in university. We were required to make a to-do list website with DOM HTML using JavaScript and create user interactions using `.addEventListener()`. The CSS is not responsive yet, so it may look off in certain devices.
 
-## bugs/things to be fixed
+## languages used
 
-- not responsive yet
+- HTML
+- CSS
+- JavaScript
+
+## bugs/things to be fixed/added
+
+- not responsive yet (looks terrible on mobile)
 - the to-do list may look off center on some devices
 - making the UI more comfortable to the user, e.g. pressing  `enter` to immediately input the task as opposed to pressing a button.
 
