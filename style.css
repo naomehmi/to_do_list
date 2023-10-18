@@ -54,6 +54,12 @@ h1{
     height: 100%;
 }
 
+.tambah{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
 input{
     border-radius: 7px;
     height: 27px;
@@ -94,7 +100,7 @@ li{
 }
 
 .task-text{
-    width: 195px;
+    width: 60%;
     text-wrap: balance;
 }
 
@@ -123,9 +129,22 @@ li{
     width: 195px;
 }
 
-@media (max-width :768px){
+@media (max-width :767px){
     .container{
         background-size: cover;
         background-position: center;
+        width: 90vw;
+    }
+
+    h1{
+        width: 90vw;
+    }
+
+    input{
+        width:68vw;
+    }
+
+    .task-text{
+        width: 40vw;
     }
 }
