@@ -23,7 +23,6 @@ this is a revamped version of one of my front end web development assignments in
 
 ## bugs/things to be fixed/added
 
-- not responsive yet (looks terrible on mobile)
 - making the UI more comfortable to the user, e.g. pressing  `enter` to immediately input the task as opposed to pressing a button.
 
 ## extras
