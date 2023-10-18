@@ -13,8 +13,10 @@
         <h1>To-Do List</h1>
       </div>
       <div id="isi">
-        <input placeholder="add a task..." type="text" />
-        <button onclick="input_task()">Add</button>
+        <div class="tambah">
+        <input required placeholder="add a task..." type="text" />
+        <button onclick="input_task()" disabled>Add</button>
+      </div>
         <div class="list">
           <ul></ul>
         </div>
