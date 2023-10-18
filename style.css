@@ -87,6 +87,11 @@ button{
     border: none
 }
 
+button:disabled{
+    background: linear-gradient(to right, rgb(232, 232, 232), rgb(187, 191, 202));
+    color: rgb(113, 124, 140)
+}
+
 .list{
     margin: 10px 0;
 }
