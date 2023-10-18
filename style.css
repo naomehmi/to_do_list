@@ -144,6 +144,10 @@ li{
         width:68vw;
     }
 
+    .mini-input{
+        width: 50vw;
+    }
+
     .task-text{
         width: 40vw;
     }
