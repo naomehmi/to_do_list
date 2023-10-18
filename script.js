@@ -1,11 +1,30 @@
 let inp = document.querySelector("input")
+let add = document.querySelector("button")
 inp.focus()
+
+inp.addEventListener('keydown',(e)=>{
+  if(inp.value.length >= 0){
+    add.disabled = false
+  } else{
+    add.disabled = true
+  }
+  if(e.code){
+    if(inp.value.length <= 1){
+      add.disabled = true
+    }
+  }
+  if(e.code == "Enter"){
+    add.click()
+    add.disabled = true
+  }
+})
 
 function input_task() {
   if(document.querySelector("input").value === ""){
     return
   }
   
+  add.disabled = true
 
   let he = document.getElementById("isi");
   he.style.height = "fit-content";
