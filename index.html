@@ -15,13 +15,16 @@
       <div id="isi">
         <div class="tambah">
         <input required placeholder="add a task..." type="text" />
-        <button onclick="input_task()" disabled>Add</button>
+        <button onclick="input_task()" disabled id="add">Add</button>
       </div>
         <div class="list">
           <ul></ul>
         </div>
       </div>
-      <button id="del-all" onclick="del_all()">Delete All</button>
+      <div class="btns">
+        <button id="del-all">Delete All</button>
+        <button id="remove">Remove Data</button>
+      </div>
     </div>
     <script src="script.js"></script>
   </body>
