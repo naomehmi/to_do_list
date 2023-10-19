@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@300;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;600;800&display=swap');
 
 *{
     margin: 0;
@@ -6,6 +6,7 @@
     box-sizing: border-box;
     font-family: Unbounded, sans-serif;
     font-size: 11px;
+    letter-spacing: 0.3px;
 }
 
 html{
@@ -18,7 +19,7 @@ html{
 }
 
 h1{
-    font-weight: 750;
+    font-weight: 800;
     height: 45px;
     font-size: 20px;
     display: flex;
@@ -47,6 +48,7 @@ h1{
     left:50%;
     transform: translate(-50%,0);
     margin:auto;
+    height :fit-content;
 }
 
 #isi{
@@ -66,7 +68,7 @@ input{
     width: 278px;
     padding: 0 10px;
     border: 1.5px solid rgb(175, 175, 73);
-    font-weight: 100;
+    font-weight: 300;
 }
 
 input[type=text]:focus{
@@ -81,14 +83,14 @@ button{
     height: 27px;
     width: 45px;
     border-radius: 5px;
-    font-weight: 700;
+    font-weight: 600;
     background:linear-gradient(to right, rgb(206, 206, 90), rgb(255, 225, 123));
     color: rgb(106, 106, 0);
     border: none
 }
 
 button:disabled{
-    background: linear-gradient(to right, rgb(232, 232, 232), rgb(187, 191, 202));
+    background: linear-gradient(to right, rgb(187, 191, 202), rgb(232, 232, 232));
     color: rgb(113, 124, 140)
 }
 
@@ -108,10 +110,11 @@ li{
     width: 200px;
     text-wrap: initial;
     overflow-wrap: break-word;
+    font-weight: 400;
 }
 
 .up{
-    background: linear-gradient(to right, rgb(206, 206, 90), rgb(255, 225, 123));
+    background:linear-gradient(to right, rgb(206, 206, 90), rgb(255, 225, 123));
 }
 
 .del, #del-all{
@@ -125,17 +128,35 @@ li{
     margin-left: 5px;
 }
 
-#del-all{
+#del-all, #remove{
     width:100px;
-    margin:0 10px 10px 10px;
+    margin:0 0 10px 0;
     display:none;
+}
+
+#remove{
+    width: 110px;
+}
+
+.btns{
+    display: flex;
+    justify-content: center;
+    gap:10px
 }
 
 .mini-input{
     width: 195px;
 }
 
+span{
+    color:rgb(253, 141, 20);
+    font-weight: 800;
+}
+
 @media (max-width :767px){
+    *{
+        font-size: 9px;
+    }
     .container{
         background-size: cover;
         background-position: center;
