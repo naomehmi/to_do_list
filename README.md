@@ -13,7 +13,7 @@ a simple and easy to-do list website to note down your tasks for the day. Add, u
 - responsive
 - pressing `enter` automatically inputs the task
 - the `add` button only works if the input value length is not empty
-- no 
+- no text overflow
 
 ## brief description
 
