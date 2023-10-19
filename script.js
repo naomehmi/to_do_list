@@ -8,8 +8,8 @@ inp.addEventListener('keydown',(e)=>{
   } else{
     add.disabled = true
   }
-  if(e.code){
-    if(inp.value.length <= 0){
+  if(e.code == "Backspace"){
+    if(inp.value === ""){
       add.disabled = true
     }
   }
