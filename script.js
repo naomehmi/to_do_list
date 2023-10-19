@@ -1,5 +1,98 @@
 let inp = document.querySelector("input")
 let add = document.querySelector("button")
+let delAll = document.getElementById("del-all")
+let con = document.querySelector("ul")
+let rmv = document.getElementById("remove")
+let storage = localStorage
+
+const deleteFunction = (button)=>{
+  button.addEventListener("click",()=>{
+    con.removeChild(button.parentElement.parentElement)
+    if(con.innerHTML === ""){
+      delAll.style.display = "none"
+      rmv.style.display = "none"
+    }
+    storage.setItem("tasks",con.innerHTML)
+  })
+}
+
+const updateFunction = (button)=>{
+  button.addEventListener("click",()=>{
+    let papa = button.parentElement.parentElement.querySelector("p")
+    let msk = button.parentElement.parentElement.querySelector(".mini-input")
+
+    msk.addEventListener("keypress",(e)=>{
+      if(e.code === "Enter"){
+        button.click()
+      }
+    })
+
+    if(papa.style.display !== "none"){
+      papa.style.display = "none";
+      msk.value = ""
+      msk.style.display = "inline-block";
+      msk.focus()
+      return
+  }
+
+  if(msk.style.display !== "none"){
+    if (msk.value != "") {
+      papa.innerText = msk.value;
+    }
+      papa.style.display = "inline-block";
+      msk.style.display = "none";
+      storage.setItem("tasks",con.innerHTML)
+      return
+  }
+  })
+}
+
+window.addEventListener("load",()=>{
+  if(storage.getItem("tasks") === null){
+    tutorial = [
+      "Hello there",
+      "Write a new task in the textbox above",
+      "Press <span>Add</span> to input the task",
+      "Press <span>Update</span> to edit a task",
+      "Press <span>Delete</span> to remove a task",
+      "Press <span>Delete All</span>  to clear the to-do list",
+      "Press <span>Remove Data</span> to clear your local storage"
+    ]
+
+    tutorial.forEach((e)=>{
+      add.disabled = false
+      inp.value = e
+      add.click()
+    })
+    return
+  }
+  con.innerHTML = storage.getItem("tasks")
+  let del = document.querySelectorAll(".del")
+  let up = document.querySelectorAll(".up")
+  
+  if(con.innerHTML != ""){
+    delAll.style.display = "inline-block"
+    rmv.style.display = "inline-block"
+  }
+
+  del.forEach((button)=>{deleteFunction(button)})
+
+  up.forEach((button)=>{updateFunction(button)})
+})
+
+rmv.addEventListener("click",()=>{
+  if(confirm("Click OK to clear your local storage")){
+    storage.clear()
+    window.location.reload()
+  }
+})
+
+delAll.addEventListener("click",()=>{
+  con.innerHTML = ""
+  storage.setItem("tasks",con.innerHTML)
+  delAll.style.display = "none"
+  rmv.style.display = "none"
+})
 
 // focus on input
 inp.focus()
@@ -21,7 +114,7 @@ inp.addEventListener("keypress",(e)=>{
   }
 })
 
-function input_task() {
+const input_task = ()=>{
   // if input value is empty, it will not create a new task
   if(document.querySelector("input").value === ""){
     return
@@ -29,6 +122,8 @@ function input_task() {
   
   // disable add button right after creating a new task
   add.disabled = true
+  delAll.style.display = "inline-block"
+  rmv.style.display = "inline-block"
 
   // make container height flexible
   let he = document.getElementById("isi");
@@ -39,11 +134,12 @@ function input_task() {
 
   // create new list element
   let task = document.createElement("li");
+  task.className = "task"
 
   // create new paragraph element where it stores the value from the input
   let papa = document.createElement("p");
   papa.className = "task-text"
-  papa.innerText = document.querySelector("input").value;
+  papa.innerHTML = document.querySelector("input").value;
 
   // create a new input if the user wants to update a task, the display is set to none so it's invisible
   let msk = document.createElement("input");
@@ -58,14 +154,13 @@ function input_task() {
   let but1 = document.createElement("button");
   but1.className = "up";
   but1.textContent = "Update";
+  updateFunction(but1)
 
   // create new delete button for each task
   let but2 = document.createElement("button");
   but2.className = "del";
   but2.textContent = "Delete";
-
-  // select delete all button
-  let but3 = document.getElementById("del-all")
+  deleteFunction(but2)
 
   // the <ul> element will append an empty <li> element
   con.appendChild(task);
@@ -78,54 +173,7 @@ function input_task() {
   butt.appendChild(but2);
   task.appendChild(butt);
 
-  //make the delete all button visible after inputting a task
-  but3.style.display="inline-block"
-
-  // delete 1 task
-  but2.addEventListener("click", () => {
-    con.removeChild(task);
-    // if there are no more tasks, the delete all button will be invisible
-    if(con.childElementCount === 0){
-      but3.style.display = "none"
-    }
-  });
-
-  // for the update input box, if the user presses enter it automatically triggers the update button
-  msk.addEventListener('keypress', (e)=>{
-    if(e.code === "Enter"){
-      but1.click()
-    }
-  })
-  
-  // update a task
-  but1.addEventListener("click", () => {
-    // if the paragraph element's display is not none, then the update input box will be visible for the user to edit their task
-    if(papa.style.display !== "none"){
-        papa.style.display = "none";
-        msk.value = ""
-        msk.style.display = "inline-block";
-        msk.focus()
-        return
-    }
-    
-    // if the update input box's value isn't empty, then the task's text will not be changed
-    if(msk.style.display !== "none"){
-      if (msk.value != "") {
-        papa.innerText = msk.value;
-      }
-        papa.style.display = "inline-block";
-        msk.style.display = "none";
-        return
-    }
-  });
-
-  // delete all tasks
-  but3.addEventListener("click", () =>{
-    // empty the <ul> element and make the delete all button invisible
-    con.innerHTML = ""
-    but3.style.display="none"
-    inp.focus()
-  })
-
   inp.focus()
+  storage.setItem("tasks",con.innerHTML)
 }
+console.log(storage.getItem("tasks"))
