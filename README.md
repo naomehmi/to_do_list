@@ -27,7 +27,7 @@ this is a revamped version of one of my front end web development assignments in
 
 ## bugs/things to be fixed/added
 
-- add button not being disabled when the input button is empty after clicking `ctrl`, `shift`, etc
+- saving tasks to session/local storage
 - animations
 
 ## extras
