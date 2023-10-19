@@ -105,8 +105,9 @@ li{
 }
 
 .task-text{
-    width: 60%;
-    text-wrap: balance;
+    width: 200px;
+    text-wrap: initial;
+    overflow-wrap: break-word;
 }
 
 .up{
