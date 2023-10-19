@@ -13,6 +13,7 @@ a simple and easy to-do list website to note down your tasks for the day. Add, u
 - responsive
 - pressing `enter` automatically inputs the task
 - the `add` button only works if the input value length is not empty
+- no 
 
 ## brief description
 
@@ -26,7 +27,7 @@ this is a revamped version of one of my front end web development assignments in
 
 ## bugs/things to be fixed/added
 
-- longer tasks make the container stretch
+- add button not being disabled when the input button is empty after clicking `ctrl`, `shift`, etc
 - animations
 
 ## extras
