@@ -26,6 +26,7 @@ this is a revamped version of one of my front end web development assignments in
 
 ## bugs/things to be fixed/added
 
+- longer tasks make the container stretch
 - animations
 
 ## extras
