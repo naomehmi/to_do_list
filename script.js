@@ -4,21 +4,20 @@ let add = document.querySelector("button")
 // focus on input
 inp.focus()
 
-// pressing enter triggers 'add' button
-inp.addEventListener('keydown',(e)=>{
-  if(inp.value.length >= 0){
+// if input is empty then the 'add' button is disabled
+inp.addEventListener('keyup',(e)=>{
+  if(inp.value.length != 0 && inp.value.match(/\w|[!@#\$%\^\&*\)\(+=.-]/)){
     add.disabled = false
-  } else{
-    add.disabled = true
+    return
   }
-  if(e.code){
-    if(inp.value.length <= 1){
-      add.disabled = true
-    }
-  }
-  if(e.code == "Enter"){
+
+  add.disabled = true
+})
+
+// pressing enter triggers 'add' button
+inp.addEventListener("keypress",(e)=>{
+  if(e.code === "Enter"){
     add.click()
-    add.disabled = true
   }
 })
 
