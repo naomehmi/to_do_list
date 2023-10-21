@@ -31,6 +31,7 @@ this is a revamped version of one of my front end web development assignments in
 
 - checkbox
 - date and time
+- alarm/notification
 - let user add extra information/details to their tasks
 - animations
 - making the UI more comfortable
